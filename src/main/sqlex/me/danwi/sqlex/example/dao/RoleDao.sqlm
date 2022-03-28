@@ -1,0 +1,6 @@
+getAll {
+    select *
+    from role
+    where name like concat('?', :name, '?')
+}
+

@@ -1,0 +1,20 @@
+-- 数据库Schema描述文件, 执行DDL操作
+create table user
+(
+    id   varchar(36) primary key,
+    name varchar(255),
+    age  int
+);
+
+create table role
+(
+    id   varchar(36) primary key,
+    name varchar(255)
+);
+
+create table user_role_mapping
+(
+    user varchar(36),
+    role varchar(36),
+    primary key (user, role)
+)
