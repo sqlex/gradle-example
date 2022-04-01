@@ -3,7 +3,7 @@ plugins {
     id "me.danwi.sqlex" version '1.0-SNAPSHOT'
 }
 
-group 'me.danwi.sqlex.example'
+group 'me.danwi.sqlex'
 version '1.0-SNAPSHOT'
 
 repositories {
