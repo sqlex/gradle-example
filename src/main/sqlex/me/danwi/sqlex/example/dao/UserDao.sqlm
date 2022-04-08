@@ -1,4 +1,4 @@
-getAll(age:Integer, name:String, names:String*) {
+findAll(age:Integer, name:String, names:String*) {
     select *
     from user
     where age > :age
@@ -6,14 +6,14 @@ getAll(age:Integer, name:String, names:String*) {
       and name in (:names)
 }
 
-getAllByRole(roleId:String) {
+findAllByRole(roleId:String) {
     select u.*
     from user u
              inner join user_role_mapping m on u.id = m.user
     where m.role = :roleId
 }
 
-getCountsByRole() {
+findCountsByRole() {
     select u.id, count(1) as amount
     from user u
              inner join user_role_mapping m on u.id = m.user
