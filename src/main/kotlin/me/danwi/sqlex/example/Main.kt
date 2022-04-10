@@ -11,10 +11,10 @@ fun main() {
     val userDao = dataSource.getInstance(UserDao::class.java)
     val roleDao = dataSource.getInstance(RoleDao::class.java)
 
-    userDao.getAll(10, "123", null).firstOrNull()
-    userDao.getAll(10, "123", listOf<String>()).firstOrNull()
-    userDao.getAllByRole("123").firstOrNull()
-    userDao.countsByRole.firstOrNull()
+    userDao.findAll(10, "123", null).firstOrNull()
+    userDao.findAll(10, "123", listOf<String>()).firstOrNull()
+    userDao.findAllByRole("123").firstOrNull()
+    userDao.findCountsByRole().firstOrNull()
 
-    roleDao.getAll("管").firstOrNull()
+    roleDao.findAll("管").firstOrNull()
 }
