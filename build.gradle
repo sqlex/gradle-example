@@ -1,16 +1,19 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.6.10'
-    id "me.danwi.sqlex" version '0.0.4'
+    id "me.danwi.sqlex" version '0.2.1-SNAPSHOT'
 }
 
 group 'me.danwi.sqlex'
 version '1.0-SNAPSHOT'
 
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
 dependencies {
+    implementation "mysql:mysql-connector-java:8.0.28"
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
-    implementation "me.danwi.sqlex:core:0.0.4"
+    implementation "me.danwi.sqlex:core:0.2.1-SNAPSHOT"
+    implementation "com.google.code.gson:gson:2.9.0"
 }
