@@ -1,0 +1,3 @@
+-- 数据库Schema描述文件, 执行DDL操作
+alter table user
+    modify column age int unsigned not null default 0;

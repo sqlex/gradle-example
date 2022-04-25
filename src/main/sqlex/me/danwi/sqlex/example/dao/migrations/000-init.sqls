@@ -17,4 +17,4 @@ create table user_role_mapping
     user varchar(36),
     role varchar(36),
     primary key (user, role)
-)
+);

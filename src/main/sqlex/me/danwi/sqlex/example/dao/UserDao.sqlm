@@ -2,8 +2,6 @@ findAll(age:Integer, name:String, names:String*) {
     select *
     from user
     where age > :age
-      and name like concat('%', :name, '%')
-      and name in (:names)
 }
 
 findAllByRole(roleId:String) {
