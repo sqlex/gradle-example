@@ -1,6 +1,0 @@
-findAll(name:String) {
-    select *
-    from role
-    where name like concat('?', :name, '?')
-}
-

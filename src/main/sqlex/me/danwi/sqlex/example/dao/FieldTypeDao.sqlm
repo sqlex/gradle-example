@@ -1,0 +1,4 @@
+findAll() {
+    select *
+    from field_type
+}

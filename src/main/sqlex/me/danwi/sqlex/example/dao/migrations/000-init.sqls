@@ -1,20 +1,54 @@
--- 数据库Schema描述文件, 执行DDL操作
-create table user
+create table field_type
 (
-    id   varchar(36) primary key,
-    name varchar(255),
-    age  int
-);
+    bit1_field               bit(1),
+    bitn_field               bit(8),
 
-create table role
-(
-    id   varchar(36) primary key,
-    name varchar(255)
-);
+    tinyint1_field           tinyint(1),
+    tinyint2_field           tinyint(2),
+    tinyint_unsigned_field   tinyint unsigned,
+    bool_field               boolean,
 
-create table user_role_mapping
-(
-    user varchar(36),
-    role varchar(36),
-    primary key (user, role)
-);
+    smallint_field           smallint,
+    smallint_unsigned_field  smallint unsigned,
+
+    mediumint_field          mediumint,
+    mediumint_unsigned_field mediumint unsigned,
+
+    int_field                int,
+    int_unsigned_field       int unsigned,
+
+    bigint_field             bigint,
+    bigint_unsigned_field    bigint unsigned,
+
+    float_field              float,
+    double_field             double,
+
+    decimal_field            decimal,
+
+    date_field               date,
+    datetime_field           datetime,
+    timestamp_field          timestamp,
+    time_field               time,
+    year_field               year,
+
+    char_field               char,
+    char_binary_field        char binary,
+
+    varchar_field            varchar(255),
+    varchar_binary_field     varchar(255) binary,
+
+    binary_field             binary,
+    varbinary_field          varbinary(255),
+
+    tinyblob_field           tinyblob,
+    blob_field               blob,
+    mediumblob_field         mediumblob,
+    longblob_field           longblob,
+
+    tinytext_field           tinytext,
+    text_field               text,
+    mediumtext_field         mediumtext,
+    longtext_field           longtext,
+    enum_field               enum ('yes', 'no'),
+    set_field                set ('YES', 'NO')
+)
