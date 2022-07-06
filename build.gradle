@@ -1,6 +1,6 @@
 plugins {
     id "org.jetbrains.kotlin.jvm" version "1.6.10"
-    id "me.danwi.sqlex" version "0.5.0-SNAPSHOT"
+    id "me.danwi.sqlex" version "0.9.6-SNAPSHOT"
 }
 
 group "me.danwi.sqlex"
@@ -16,6 +16,6 @@ dependencies {
     implementation "org.slf4j:slf4j-simple:1.7.36"
     implementation "mysql:mysql-connector-java:8.0.28"
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
-    implementation "me.danwi.sqlex:core:0.5.0-SNAPSHOT"
+    implementation "me.danwi.sqlex:core:0.9.6-SNAPSHOT"
     implementation "com.google.code.gson:gson:2.9.0"
 }
