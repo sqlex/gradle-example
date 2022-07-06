@@ -12,7 +12,9 @@ fun main() {
         "1234qwer",
         Repository::class.java
     )
+
     try {
+        factory.migrate()
         factory.check()
     } catch (e: SqlExCheckException) {
         e.missed.forEach {
