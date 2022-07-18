@@ -8,6 +8,7 @@ import me.danwi.sqlex.example.dao.User
 import me.danwi.sqlex.example.dao.UserDao
 import me.danwi.sqlex.example.dao.UserTable
 import java.time.OffsetDateTime
+import java.time.ZoneId
 import java.time.ZoneOffset
 
 fun main() {
@@ -48,6 +49,7 @@ fun main() {
     user5.age = 1
     user5.createAt = OffsetDateTime.of(2022, 1, 1, 0, 0, 0, 0, ZoneOffset.UTC)
     val user6 = userTable.saveOrUpdate(user5)
+    user6.createAt = user6.createAt.atZoneSameInstant(ZoneId.of("UTC")).toOffsetDateTime()
     assert(user5 == user6)
 
     //sqlm查询
