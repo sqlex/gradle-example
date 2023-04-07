@@ -1,12 +1,9 @@
 package me.danwi.sqlex.example
 
 import me.danwi.sqlex.core.DaoFactory
-import me.danwi.sqlex.core.query.*
-import me.danwi.sqlex.example.dao.Repository
-import me.danwi.sqlex.example.dao.RoleDao
-import me.danwi.sqlex.example.dao.User
-import me.danwi.sqlex.example.dao.UserDao
-import me.danwi.sqlex.example.dao.UserTable
+import me.danwi.sqlex.core.query.arg
+import me.danwi.sqlex.core.query.eq
+import me.danwi.sqlex.example.dao.*
 import java.time.OffsetDateTime
 import java.time.ZoneId
 import java.time.ZoneOffset
@@ -27,7 +24,7 @@ fun main() {
     //删除所有用户
     userTable.delete().where(true.arg).execute()
     //插入用户
-    val user1 = User.forInsert("fake id", "fake name")
+    val user1 = User.builder().setId("fake id").setName("fake name").build()
     userTable.insertWithoutNull(user1)
     //查找
     val user2 = userTable.findById("fake id")!!
@@ -42,7 +39,7 @@ fun main() {
     val user4 = userTable.findById("fake id")
     assert(user4 == null)
     //保存并返回
-    val user5 = userTable.save(User.forInsert("fake id", "fake name"))!!
+    val user5 = userTable.save(User.builder().setId("fake id").setName("fake name").build())!!
     assert(user5.age == null)
     //保存或更新
     user5.age = 1
